@@ -12,7 +12,7 @@ bool find(int* matrix, int rows, int columns, int number)
     c_row = 0;
     c_col = columns-1;
 
-    while(c_row < rows || c_col >= 0) {
+    while(c_row < rows && c_col >= 0) {
         if (number == matrix[c_row*columns+c_col]) {
             return true;
         }
