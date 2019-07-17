@@ -10,5 +10,6 @@ ENABLE_TESTING()
 ADD_SUBDIRECTORY(01_assignment_operator)
 ADD_SUBDIRECTORY(02_Singleton)
 ADD_SUBDIRECTORY(03_duplication_in_array)
+ADD_SUBDIRECTORY(04_find_in_partially_sorted_matrix)
 
 
