@@ -21,6 +21,7 @@ BinaryTreeNode* CreateBinaryTreeNode(int value)
     pNode->m_nValue = value;
     pNode->m_pLeft = nullptr;
     pNode->m_pRight = nullptr;
+    pNode->m_pParent = nullptr;
 
     return pNode;
 }
@@ -31,6 +32,11 @@ void ConnectTreeNodes(BinaryTreeNode* pParent, BinaryTreeNode* pLeft, BinaryTree
     {
         pParent->m_pLeft = pLeft;
         pParent->m_pRight = pRight;
+
+        if(pLeft != nullptr)
+            pLeft->m_pParent = pParent;
+        if(pRight != nullptr)
+            pRight->m_pParent = pParent;
     }
 }
 

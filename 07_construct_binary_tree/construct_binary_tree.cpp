@@ -45,6 +45,9 @@ static BinaryTreeNode * construct_core(int *preorder, int p_start, int p_end,
         ni_end = idx - 1;
         root->m_pLeft = construct_core(preorder, np_start, np_end,
                                      inorder, ni_start, ni_end);
+        if (root->m_pLeft != NULL) {
+            root->m_pLeft->m_pParent = root;
+        }
     }
 
     if (idx == i_end) {
@@ -57,6 +60,9 @@ static BinaryTreeNode * construct_core(int *preorder, int p_start, int p_end,
         ni_end = i_end;
         root->m_pRight = construct_core(preorder, np_start, np_end,
                                      inorder, ni_start, ni_end);
+        if (root->m_pRight != NULL) {
+            root->m_pRight->m_pParent = root;
+        }
     }
     return root;
 }
