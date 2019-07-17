@@ -15,5 +15,6 @@ ADD_SUBDIRECTORY(05_replace_spaces)
 ADD_SUBDIRECTORY(06_print_list_in_reversed_order)
 ADD_SUBDIRECTORY(07_construct_binary_tree)
 ADD_SUBDIRECTORY(08_next_node_in_binary_trees)
+ADD_SUBDIRECTORY(09_queue_with_two_stacks)
 
 
