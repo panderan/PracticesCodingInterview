@@ -12,5 +12,6 @@ ADD_SUBDIRECTORY(02_Singleton)
 ADD_SUBDIRECTORY(03_duplication_in_array)
 ADD_SUBDIRECTORY(04_find_in_partially_sorted_matrix)
 ADD_SUBDIRECTORY(05_replace_spaces)
+ADD_SUBDIRECTORY(06_print_list_in_reversed_order)
 
 
