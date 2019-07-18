@@ -19,4 +19,5 @@ ADD_SUBDIRECTORY(09_queue_with_two_stacks)
 ADD_SUBDIRECTORY(10_fibonacci)
 ADD_SUBDIRECTORY(11_min_number_in_rotated_array)
 ADD_SUBDIRECTORY(12_string_path_in_matrix)
+ADD_SUBDIRECTORY(13_robot_move)
 
