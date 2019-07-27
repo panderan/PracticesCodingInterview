@@ -6,3 +6,5 @@ PROJECT(coding-interview-chapter-3)
 
 # Sub directories
 ADD_SUBDIRECTORY(16_power)
+ADD_SUBDIRECTORY(17_print_1_to_max_of_n_digits)
+
