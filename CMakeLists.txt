@@ -8,4 +8,5 @@ SET(CMAKE_CXX_FLAGS " -std=c++11 -g ")
 # Sub directories
 ENABLE_TESTING()
 ADD_SUBDIRECTORY(Chapter2)
+ADD_SUBDIRECTORY(Chapter3)
 
