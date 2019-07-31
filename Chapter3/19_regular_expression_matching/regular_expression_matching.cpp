@@ -44,6 +44,9 @@ bool match_core(const char *str, const char *pattern)
             return retval;
         }
     }
+    else {
+        return false;
+    }
 }
 
 bool match(const char *str, const char *pattern)

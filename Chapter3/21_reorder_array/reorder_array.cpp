@@ -11,8 +11,8 @@ void reorder_odd_event(int data[], unsigned int length)
 
     end_idx = length - 1;
     while (true) {
-        for (; start_idx<length && (*(data+start_idx)&0x1)==0; start_idx++);
-        for (; end_idx >=0 && (*(data+end_idx)&0x1)==1; end_idx--);
+        for (; start_idx<length && (*(data+start_idx)&0x1)==1; start_idx++);
+        for (; end_idx >=0 && (*(data+end_idx)&0x1)==0; end_idx--);
         if (end_idx < start_idx) {
             break;
         }

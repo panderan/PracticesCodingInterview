@@ -1,5 +1,5 @@
 #include "power.h"
-#include "cstdlib"
+#include <cmath>
 
 bool g_power_error;
 
@@ -24,7 +24,7 @@ double power_with_unsigned_exp_fast(double base, int exponent)
     }
     
     retval = power_with_unsigned_exp_fast(base, exponent>>1);
-    if (exponent & 0x1 == 1) {
+    if ((exponent & 0x1) == 1) {
         retval *= base;
     }
     return retval;
@@ -74,7 +74,7 @@ double power_fast(double base, int exponent)
     double retval = 0;
 
     retval = power_with_unsigned_exp_fast(base, unsigned_exp);
-    if (unsigned_exp & 0x1 == 1) {
+    if ((unsigned_exp & 0x1) == 1) {
         retval *= base;
     }
 
