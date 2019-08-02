@@ -30,5 +30,8 @@ void ConnectTreeNodes(BinaryTreeNode* pParent, BinaryTreeNode* pLeft, BinaryTree
 void PrintTreeNode(const BinaryTreeNode* pNode);
 void PrintTree(const BinaryTreeNode* pRoot);
 void DestroyTree(BinaryTreeNode* pRoot);
-
+int PreorderTraversal(const BinaryTreeNode *pRoot, const BinaryTreeNode* nl[], int length);
+void InorderTraversal(const BinaryTreeNode *pRoot, int num[], int length);
+void PostorderTraversal(const BinaryTreeNode *pRoot, int num[], int length);
+void PrintTraversal(const BinaryTreeNode *nl[], int length);
 #endif
