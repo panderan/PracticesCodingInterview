@@ -6,4 +6,5 @@ PROJECT(coding-interview-chapter-4)
 
 # Sub directories
 ADD_SUBDIRECTORY(27_mirror_of_binary_tree)
+ADD_SUBDIRECTORY(28_symmetrical_binary_tree)
 
