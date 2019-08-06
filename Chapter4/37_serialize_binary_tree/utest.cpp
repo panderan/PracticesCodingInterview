@@ -20,6 +20,10 @@ void _verify(const char *message, BinaryTreeNode* node1, BinaryTreeNode *node2)
 void verify(const char *message, BinaryTreeNode *orig_root)
 {
 	char *buff = serialize(orig_root);
+    if (buff == NULL) {
+        return; 
+    }
+
     printf("%s\n", buff);
     BinaryTreeNode *root = deserialize(buff);
     _verify(message, orig_root, root);

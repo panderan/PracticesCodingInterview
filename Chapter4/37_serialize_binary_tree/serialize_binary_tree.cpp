@@ -1,6 +1,8 @@
 #include "serialize_binary_tree.h"
 #include <unistd.h>
 #include <cstdio>
+#include <cstdlib>
+#include <cstring>
 #include <stack>
 
 char * serialize(const BinaryTreeNode *root)
