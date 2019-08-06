@@ -108,6 +108,11 @@ int PreorderTraversal(const BinaryTreeNode *pRoot, const BinaryTreeNode* nl[], i
         const BinaryTreeNode *tmp = s.top();
         *(nl+i++) = tmp;
         s.pop();
+
+        if (i==length) {
+            return i;
+        }
+
 		if (tmp != NULL) {
         	s.push(tmp->m_pRight);
         	s.push(tmp->m_pLeft);
@@ -117,9 +122,32 @@ int PreorderTraversal(const BinaryTreeNode *pRoot, const BinaryTreeNode* nl[], i
     return i;
 }
 
-void InorderTraversal(const BinaryTreeNode *pRoot, BinaryTreeNode* nl[], int length)
+int InorderTraversal(const BinaryTreeNode *pRoot, const BinaryTreeNode* nl[], int length)
 {
+    stack<const BinaryTreeNode *>s;
+	const BinaryTreeNode *loop = pRoot;
+    int i = 0;
 
+    if (pRoot == NULL || nl == NULL || length < 1) {
+        return 0;
+    }
+
+	for (loop=pRoot,s.push(loop); loop->m_pLeft!=NULL; loop=loop->m_pLeft, s.push(loop)){}
+
+    while (s.empty()==false) {
+        const BinaryTreeNode * tmp = s.top();
+        *(nl+i++) = tmp;
+        s.pop();
+
+        if (i==length) {
+            return i;
+        }
+
+        if (tmp->m_pRight) {
+			for (loop=tmp->m_pRight,s.push(loop); loop->m_pLeft!=NULL; loop=loop->m_pLeft, s.push(loop));
+        }
+    }
+    return i;
 }
 
 void PostorderTraversal(const BinaryTreeNode *pRoot, BinaryTreeNode* nl[], int length)
