@@ -20,3 +20,5 @@ ADD_SUBDIRECTORY(12_string_path_in_matrix)
 ADD_SUBDIRECTORY(13_robot_move)
 ADD_SUBDIRECTORY(14_cutting_rope)
 ADD_SUBDIRECTORY(15_number_of_one)
+ADD_SUBDIRECTORY(notes)
+

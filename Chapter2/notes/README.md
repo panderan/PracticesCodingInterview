@@ -6,6 +6,36 @@
 
 假设表中元素是按升序排列，将表中间位置记录的关键字与查找关键字比较，如果两者相等，则查找成功；否则利用中间位置记录将表分成前、后两个子表，如果中间位置记录的关键字大于查找关键字，则进一步查找前一子表，否则进一步查找后一子表。重复以上过程，直到找到满足条件的记录，使查找成功，或直到子表不存在为止，此时查找不成功。
 
+```
+int find_first_equal(int arr[], int length, int key)
+{
+	int s_idx = 0, m_idx = 0, e_idx = 0, ret = 0;
+	
+	if (arr == NULL || length < 1) {
+		return -1;
+	}
+	
+	s_idx = 0;
+	e_idx = length-1;
+	m_idx = s_idx+(e_idx-s_idx)/2;
+	
+	while (s_idx <= e_idx) {
+		if ((ret=arr[m_idx]-key) == 0) {
+			return m_idx;
+		}
+		if (ret>0) {
+			s_idx = m_idx+1;
+			m_idx = s_idx+(e_idx-s_idx)/2;
+		}
+		else {
+			e_idx = m_idx-1;
+			m_idx = s_idx+(e_idx-s_idx)/2;
+		}
+	}
+	return -1;	
+}
+```
+
 **要求：**
 
 1.必须采用顺序存储结构。
@@ -21,7 +51,6 @@
 ```
 void sort(int *a, int left, int right)
 {
-    /*如果左边索引大于或者等于右边的索引就代表已经整理完成一个组了*/
     if(left >= right) {
         return ;
     }
@@ -30,34 +59,20 @@ void sort(int *a, int left, int right)
     int j = right;
     int key = a[left];
     
-    /*控制在当组内寻找一遍*/
     while(i < j) {
-        /* 而寻找结束的条件就是，
-           1. 找到一个小于或者大于key的数（大于或小于取决于你想升序还是降序）
-           2. 没有符合条件1的，并且i与j的大小没有反转 
-        */ 
         while(i < j && key <= a[j]) {
-            j--;/*向前寻找*/
+            j--;
         }
-        
-        /* 找到一个这样的数后就把它赋给前面的被拿走的i的值
-          （如果第一次循环且key是a[left]，那么就是给key)
-        */ 
         a[i] = a[j];
         
-        /* 这是i在当组内向前寻找，同上，不过注意与key的大小关系停止循环和上面相反，
-           因为排序思想是把数往两边扔，所以左右两边的数大小与key的关系相反
-        */ 
         while(i < j && key >= a[i]) {
             i++;
         }
         a[j] = a[i];
     }
-    
-    /* 当在当组内找完一遍以后就把中间数key回归 */
+
     a[i] = key;
     
-    /* 最后用同样的方式对分出来的左边和右边的小组进行同上的做法，直到每一组的i = j 为止 */
     sort(a, left, i - 1);
     sort(a, i + 1, right);
 }
