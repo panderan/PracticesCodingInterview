@@ -52,7 +52,7 @@ void get_least_numbers(int *input, int length, int *output, int n)
             end = cur_pos < n ? end : start+index;
             index = partition(input+start, end-start);
 		    if (index == -1) {
-                g_error == true;
+                g_error = true;
                 return;
 		    }
         }
