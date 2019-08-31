@@ -1,0 +1,19 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+
+PROJECT(first_common_nodes_in_lists)
+SET(DP_UNIT_TEST_SRC    ../../main.cpp
+                        first_common_nodes_in_lists.cpp
+						../../utilities/List.cpp
+                        utest.cpp)
+
+FIND_PACKAGE(PkgConfig)
+PKG_CHECK_MODULES(CPPUNIT REQUIRED cppunit)
+
+INCLUDE_DIRECTORIES(${CPPUNIT_INCLUDE_DIRS})
+LINK_DIRECTORIES(${CPPUNIT_LIBRARY_DIRS})
+
+ADD_EXECUTABLE(${PROJECT_NAME} ${DP_UNIT_TEST_SRC})
+TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${CPPUNIT_LIBRARIES})
+
+ADD_TEST(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
+
