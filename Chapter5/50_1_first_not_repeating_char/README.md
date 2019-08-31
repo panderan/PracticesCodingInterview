@@ -1,0 +1,1 @@
+# First not repeating char
