@@ -1,0 +1,1 @@
+# First charater in stream
