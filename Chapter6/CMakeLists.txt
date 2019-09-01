@@ -6,3 +6,4 @@ PROJECT(coding-interview-chapter-6)
 
 # Sub directories
 ADD_SUBDIRECTORY(53_1_number_of_k)
+ADD_SUBDIRECTORY(51_2_missing_number)
